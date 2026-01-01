@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Singapore Regional Flight Baggage Calculator | 20 Airlines</title>
+    <title>Singapore Regional Flight Baggage Calculator | 19 Airlines</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
         
@@ -333,7 +333,7 @@
     <div class="container">
         <header>
             <h1>✈️ Singapore Regional Flight Calculator</h1>
-            <p class="subtitle">Calculate baggage allowances & costs for 20 airlines</p>
+            <p class="subtitle">Calculate baggage allowances & costs for 19 airlines</p>
             <div class="coverage-badge">🎯 95%+ Coverage | Malaysia • Indonesia • Vietnam • Thailand • Philippines</div>
         </header>
 
@@ -341,14 +341,13 @@
             <div class="form-section">
                 <label for="airline">
                     Select Airline
-                    <span class="label-hint">(20 airlines available)</span>
+                    <span class="label-hint">(19 airlines available)</span>
                 </label>
                 <select id="airline">
                     <option value="">Choose your airline...</option>
                     <optgroup label="🇸🇬 Singapore-Based Airlines">
                         <option value="Singapore Airlines">Singapore Airlines</option>
                         <option value="Scoot">Scoot</option>
-                        <option value="Jetstar Asia">Jetstar Asia</option>
                     </optgroup>
                     <optgroup label="✈️ Major Full-Service Carriers">
                         <option value="Thai Airways">Thai Airways (Thailand)</option>
@@ -421,10 +420,10 @@
         </div>
 
         <div class="data-verified">
-            ✅ All data verified as of December 31, 2025 | Research: 20 airlines, 95%+ flight coverage<br>
+            ✅ All data verified as of December 31, 2025 | Research: 19 airlines, 95%+ flight coverage<br>
             💡 Tip: Pre-purchasing baggage online saves 20-75% compared to airport rates<br>
             <br>
-            💱 <strong>Currency Note:</strong> Airlines use different currencies. Singapore-based airlines (Scoot, Jetstar Asia) charge in SGD, others in USD. USD conversions shown for reference (rate: SGD $1 = USD $0.74).
+            💱 <strong>Currency Note:</strong> Airlines use different currencies. Singapore-based airline Scoot charges in SGD, others in USD. USD conversions shown for reference (rate: SGD $1 = USD $0.74).
         </div>
 
         <footer>
@@ -435,7 +434,7 @@
     </div>
 
     <script>
-        // COMPREHENSIVE AIRLINE DATA - All 20 Airlines with Verified Information
+        // COMPREHENSIVE AIRLINE DATA - All 19 Airlines with Verified Information
         const airlinesData = {
             "Singapore Airlines": {
                 tier: "premium",
@@ -463,19 +462,6 @@
                 currency: "SGD",
                 currencyUSD: 0.74,
                 notes: "10kg cabin allowance (3kg more than most LCCs!). SGD $20/kg airport. Verified Dec 2025."
-            },
-            "Jetstar Asia": {
-                tier: "budget",
-                fareTypes: {
-                    "Starter": { cabin: 7, checked: 0 },
-                    "Starter Plus": { cabin: 7, checked: 20 },
-                    "Starter Max": { cabin: 7, checked: 30 },
-                    "Business": { cabin: 7, checked: 30 }
-                },
-                pricing: { airport: 20, prePurchase: 16 },
-                currency: "SGD",
-                currencyUSD: 0.74,
-                notes: "First 15kg at airport: SGD $65 flat. Additional: SGD $20/kg. Verified Dec 2025."
             },
             "AirAsia": {
                 tier: "ultra-budget",
@@ -839,7 +825,6 @@
                     <div class="tip-box" style="background: #FEE2E2; border-left-color: var(--danger); margin-bottom: 16px;">
                         <strong>⚠️ Fare Upgrade Recommended:</strong>
                         Your "${fareType}" fare includes NO checked baggage (0kg). Paying excess fees for ${checkedWeight}kg will be expensive! Consider upgrading to a fare that includes checked baggage - it's usually cheaper than paying ${formatCurrency(airportCost)} in excess fees.
-                        ${airline === "Jetstar Asia" ? '<br><br>💡 Try "Starter Plus" (includes 20kg) or "Starter Max" (includes 30kg) instead!' : ''}
                         ${airline === "Scoot" ? '<br><br>💡 Try "FlyBag" or "FlyBagEat" (includes 20kg) or "ScootPlus" (includes 30kg) instead!' : ''}
                         ${airline === "AirAsia" || airline === "Thai AirAsia" || airline === "Indonesia AirAsia" ? '<br><br>💡 Try "Value Pack" or "Premium Flex" (includes 20kg) instead!' : ''}
                         ${airline === "VietJet" ? '<br><br>💡 Try "Deluxe" (includes 20kg) or "SkyBoss" (includes 30kg) instead!' : ''}
